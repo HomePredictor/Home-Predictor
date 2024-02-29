@@ -39,7 +39,7 @@ jobs:
     - name: make application-database.yml
       run: |
         mkdir ./src/main/resources
-        touch ./src/main/resources/application-database.yml
+        touch ./src/main/resources/application.yml
         
          # GitHub-Actions 에서 설정한 값을 application.yml 파일에 쓰기
         echo "${{ secrets.DATABASE }}" >> ./src/main/resources/application.yml
