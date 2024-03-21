@@ -27,5 +27,7 @@ public class ApartmentType {
     @JoinColumn(name = "apartment_id")
     private Apartment apartment;
     private Integer size;
-    private Long predictedPrice;
+    private Long predictedPrice1;
+    private Long predictedPrice2;
+    private Long predictedPrice3;
 }
