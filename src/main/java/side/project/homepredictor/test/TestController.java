@@ -1,4 +1,4 @@
-package side.project.homepredictor.controller;
+package side.project.homepredictor.test;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
