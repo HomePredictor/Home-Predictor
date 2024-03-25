@@ -1,17 +1,16 @@
 package side.project.homepredictor.domain.apartmenttype.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import side.project.homepredictor.domain.apartment.entity.Apartment;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Getter
 @AllArgsConstructor
@@ -27,5 +26,13 @@ public class ApartmentType {
     @JoinColumn(name = "apartment_id")
     private Apartment apartment;
     private Integer size;
-    private Long predictedPrice;
+    private Long predictedPrice1;
+    private Long predictedPrice2;
+    private Long predictedPrice3;
+    @Transient
+    private Map<String, Double> dealHistoryMap = new HashMap<>();
+
+    public void updateDealHistory(Map<String, Double> map) {
+        this.dealHistoryMap = map;
+    }
 }

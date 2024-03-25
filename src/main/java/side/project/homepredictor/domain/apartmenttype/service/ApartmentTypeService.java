@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import side.project.homepredictor.domain.apartment.entity.Apartment;
 import side.project.homepredictor.domain.apartment.repository.ApartmentRepository;
 import side.project.homepredictor.domain.apartmenttype.dto.response.ApartmentTypeResponseDto;
+import side.project.homepredictor.domain.apartmenttype.dto.response.LocationDto;
 import side.project.homepredictor.domain.apartmenttype.repository.ApartmentTypeRepository;
 
 import java.util.List;
@@ -24,5 +25,12 @@ public class ApartmentTypeService {
             .stream()
             .map(ApartmentTypeResponseDto::fromEntity)
             .collect(Collectors.toList());
+    }
+
+    public LocationDto findApartmentLocation(Long apartmentId) {
+        Apartment apartment = apartmentRepository.findById(apartmentId).orElseThrow(
+            IllegalArgumentException::new
+        );
+        return LocationDto.fromEntity(apartment);
     }
 }

@@ -9,4 +9,6 @@ import java.util.List;
 public interface ApartmentTypeRepository extends JpaRepository<ApartmentType,Long> {
 
     List<ApartmentType> findAllByApartment(Apartment apartment);
+
+    List<ApartmentType> findAllById(Long id);
 }
