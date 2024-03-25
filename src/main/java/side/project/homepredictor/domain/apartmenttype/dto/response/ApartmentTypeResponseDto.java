@@ -2,8 +2,6 @@ package side.project.homepredictor.domain.apartmenttype.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
-import side.project.homepredictor.domain.apartment.entity.Apartment;
 import side.project.homepredictor.domain.apartmenttype.entity.ApartmentType;
 
 import java.util.Arrays;
